@@ -14,6 +14,20 @@ exports.login = (req, res) => {
   })
 }
 
+exports.signup = (req,res) => {
+  const newUser = new User(req.body);
+
+  newUser.save((err, user) =>{
+    if(err){
+      console.log(err);
+      res.send({});
+    }else{
+      res.json(user);
+
+    }
+  })
+}
+
 exports.getAll = (req, res) => {
   User.find({}, (err, user) => {
     console.log("blep") 

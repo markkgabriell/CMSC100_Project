@@ -4,12 +4,12 @@ import './css/Class.css';
 class ClassList extends Component {
   constructor(props) {
     super(props)
-
     this.state = {
-      classes: []      
+      username : this.props.location.state.username,
+      classes: []  
     }
-
   }
+
   
   render() {
     return (
@@ -22,6 +22,7 @@ class ClassList extends Component {
         </div>
         <div className="class-list">
         TEACHER
+
           <Collection>
           <CollectionItem href='/class'>Alvin</CollectionItem>
           <CollectionItem href='#'>Alvin</CollectionItem>

@@ -17,7 +17,7 @@ class Login extends Component {
     this.handleChangePassword = this.handleChangePassword.bind(this);
     this.login = this.login.bind(this);
   }
-     handleChangeUsername(e){
+    handleChangeUsername(e){
       this.setState({username: e.target.value});
     }
     handleChangePassword(e){
@@ -37,9 +37,9 @@ class Login extends Component {
               usertype: body.usertype
             })
             if(this.state.usertype == 'Teacher'){
-              this.props.history.push('/Teacher/class-list');  
+              this.props.history.push('/Teacher/class-list', {username: this.state.username});  
             }else{
-              this.props.history.push('/Student/class-list');
+              this.props.history.push('/Student/class-list', {username: this.state.username});
             }
             
           }else{
