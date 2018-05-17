@@ -6,6 +6,6 @@ const CommentSchema = new Schema({
   content: { type: String, default: '' },
   timestamp: { type: Date, default: Date.now() },
   likeCount: { type: Number, default: 0 }
-});
+},{collection: 'Comment'});
 
 mongoose.model('Comment', CommentSchema);

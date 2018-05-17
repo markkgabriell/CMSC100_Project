@@ -8,28 +8,28 @@ const UserController = require('../controllers/User-Controller');
  * POST   /delete
  */
 
-router.get(('/login'), async(req, res) => {
-	try {
-   const user = await UserController.login();
-   console.log({})
-    res.status(200).json({
-      status: 200,
-      message: 'Successfully fetched',
-      data: user
-    });
-  } catch (status) {
-    console.log(blep)
-    let message = '';
+// router.get(('/login/username'), async(req, res) => {
+// 	try {
+//    const user = await UserController.login();
+//    console.log({})
+//     res.status(200).json({
+//       status: 200,
+//       message: 'Successfully fetched',
+//       data: user
+//     });
+//   } catch (status) {
+//     console.log(blep)
+//     let message = '';
 
-    switch (status) {
-      case 500:
-        message = 'Internal server error';
-        break;
-    }
+//     switch (status) {
+//       case 500:
+//         message = 'Internal server error';
+//         break;
+//     }
 
-    res.status(200).json({ status, message });
-  	}
-});
+//     res.status(200).json({ status, message });
+//   	}
+// });
 
 // router.get(('/all'), async(req, res) => {
 // 	try {
@@ -54,5 +54,6 @@ router.get(('/login'), async(req, res) => {
 // });
 
 router.get('/all', UserController.getAll);
+router.get('/login/:username', UserController.login);
 
 module.exports = router;

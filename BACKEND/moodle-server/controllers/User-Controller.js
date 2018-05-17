@@ -1,13 +1,15 @@
 const User = require('mongoose').model('User');
 
 exports.login = (req, res) => {
-  const _id = req.body._id;
-
-  User.findOne({ _id }, (err, user) => {
+  // const _id = req.body.username;
+// console.log(req.params.username);
+  User.findOne({username: req.params.username}, (err, user) => {
     if(err){
       res.send(404);
     }else{
-      res.send(200);
+      console.log(req.params.username);
+      console.log(user);
+      res.send(user);
     }
   })
 }
