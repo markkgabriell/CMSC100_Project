@@ -20,13 +20,15 @@
 }
 
 .posts {
-    margin-top: 10px;
-  	margin-left: 30%;
-  	margin-right: 30%;
+    margin-left: 650px;
+    width: 550px;
+    margin-top: 20px;
+  	overflow: hidden;
+    text-align: center;
  }
 
  .text-area {
- 	width: 100%;
+ 	  width: 100%;
     height: 100px;
     padding: 12px 20px;
     box-sizing: border-box;
@@ -38,7 +40,7 @@
  }
 
  #post-button {
- 	margin-left: 405px;
+ 	margin-left: 430px;
  }
 
  .post {
@@ -54,4 +56,31 @@
 
 .post .body {
   color: #272727;
+}
+
+.post-list  {
+  width: 20%;
+  float: left;
+  margin-top: 10px;
+  margin-left: 40px;
+  text-align: center;
+
+
+}
+
+.class-list {
+  margin-top: 10px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+#card-panel {
+  background-color: #07CED2;
+}
+
+.vertical-line {
+    border-left: 6px solid #197C7F;
+    height: 100%;
+    position: absolute;
+    margin-left: 370px;
 }
