@@ -7,6 +7,6 @@ const ClassSchema = new Schema({
   posts: { type: Array, default: [] },
   teacher: { type: String, default: '' },
   students: { type: Array, default: [] }
-});
+},{collection: 'Class'});
 
 mongoose.model('Class', ClassSchema);

@@ -7,6 +7,6 @@ const MessageSchema = new Schema({
   content: { type: Array, default: [] },
   timestamp: { type: String, default: '' },
   status: { type: Boolean, default: false }
-});
+},{collection: 'Message'});
 
 mongoose.model('Message', MessageSchema);

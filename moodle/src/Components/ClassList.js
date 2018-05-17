@@ -4,12 +4,12 @@ import './css/Class.css';
 class ClassList extends Component {
   constructor(props) {
     super(props)
-
     this.state = {
-      classes: []      
+      username : this.props.location.state.username,
+      classes: []  
     }
-
   }
+
   
   render() {
     return (
