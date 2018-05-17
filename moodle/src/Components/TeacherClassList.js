@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import {Row, Input, Button, Navbar, Collection, CollectionItem} from 'react-materialize';
 import './css/Class.css';
-class ClassList extends Component {
+class TeacherClassList extends Component {
   constructor(props) {
     super(props)
 
@@ -34,4 +34,4 @@ class ClassList extends Component {
   }
 }
 
-export default ClassList;
+export default TeacherClassList;

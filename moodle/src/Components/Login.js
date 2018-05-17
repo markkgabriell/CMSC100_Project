@@ -2,7 +2,6 @@ import React, { Component} from 'react';
 import {Row, Input, Button, Navbar} from 'react-materialize';
 import './css/Login.css';
 class Login extends Component {
-
   constructor(props){
     super(props);
 
@@ -57,6 +56,7 @@ class Login extends Component {
       		<Input type="email"  onChange={this.handleChangeUsername} label="Email"/>
       		<Input type="password" onChange={this.handleChangePassword} label="Password"/>
       		<Button waves="light" node='a' onClick={this.login}>
+
 			LOGIN
 			</Button>
 			<p>Don't have an account? <span><a href='/sign-up'>Sign Up</a></span></p>

@@ -21,8 +21,6 @@ class ClassList extends Component {
           <hr className="hr"></hr>
         </div>
         <div className="class-list">
-        TEACHER
-
           <Collection>
           <CollectionItem href='/class'>Alvin</CollectionItem>
           <CollectionItem href='#'>Alvin</CollectionItem>
