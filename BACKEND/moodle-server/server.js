@@ -28,6 +28,8 @@ require('./models/index');
 // Setup Routes
 const UserRouter = require('./routes/User-Router');
 app.use('/User', UserRouter);
+const ClassRouter = require('./routes/Class-Router');
+app.use('/Class', ClassRouter);
 
 // Homepage message
 app.get('/', (req, res) => {

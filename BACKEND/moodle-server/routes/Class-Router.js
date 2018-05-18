@@ -32,31 +32,7 @@ router.get(('/get-all'), async(req, res) => {
     }
 });
 
-
-router.get(('/get-by-id'), async(req, res) => {
-	try {
-   const data = await ClassController.getById();
-   console.log({})
-    res.status(200).json({
-      status: 200,
-      message: 'Successfully fetched',
-      data: user
-    });
-  } catch (status) {
-    let message = '';
-
-    switch (status) {
-      case 500:
-        message = 'Internal server error';
-        break;
-      case 404:
-        message = 'Class not found'
-        break;
-    }
-
-    res.status(200).json({ status, message });
-  	}
-});
+router.get('/class-list/:username', ClassController.getById);
 
 router.post(('/add'), async(req, res) => {
   try {

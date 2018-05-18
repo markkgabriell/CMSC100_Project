@@ -12,16 +12,15 @@ exports.add = (req, res) => {
 }
 
 exports.getById = (req, res) => {
-  const _id = req.body._id;
-
-  Class.findOne({ _id }, (err, Class) => {
-    if (err) {
-      console.log(err);
-      res.send({});
-    } else {
+  Class.find({teacher: req.params.username}, (err, Class) => {
+    if(err){
+      res.send(404);
+    }else{
+      console.log(req.params.username);
+      console.log(Class);
       res.send(Class);
     }
-  });
+  })
 }
 
 exports.delete = (req, res) => {

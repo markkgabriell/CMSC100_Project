@@ -8,8 +8,20 @@ class ClassList extends Component {
       username : this.props.location.state.username,
       classes: []  
     }
+    this.getList = this.getList.bind(this);
+    this.getList()
   }
 
+  getList(){
+    fetch('http://localhost:3001/Class/class-list/'+ this.state.username)
+      .then((response) => { return response.json() })
+      .then((body) => {
+        console.log("body")
+        this.setState({
+          classes: body
+        })
+      })
+  }
   
   render() {
     return (
@@ -22,10 +34,11 @@ class ClassList extends Component {
         </div>
         <div className="class-list">
           <Collection>
-          <CollectionItem href='/class'>Alvin</CollectionItem>
-          <CollectionItem href='#'>Alvin</CollectionItem>
-          <CollectionItem href='#'>Alvin</CollectionItem>
-          <CollectionItem href='#'>Alvin</CollectionItem>
+          {
+            this.state.classes.map((Class) => {
+              return <CollectionItem href='/class'>{Class.title}</CollectionItem>  
+            })
+          }
           </Collection>
         </div>
       </div>
