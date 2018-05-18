@@ -33,27 +33,7 @@ router.get(('/get-all'), async(req, res) => {
 });
 
 router.get('/class-list/:username', ClassController.getById);
-
-router.post(('/add'), async(req, res) => {
-  try {
-   const data = await ClassController.add();
-   console.log({})
-    res.status(200).json({
-      status: 200,
-      message: 'Successfully added',
-    });
-  } catch (status) {
-    let message = '';
-
-    switch (status) {
-      case 500:
-        message = 'Internal server error';
-        break;
-    }
-
-    res.status(200).json({ status, message });
-    }
-});
+router.post('/add', ClassController.add);
 
 router.post(('/delete'), async(req, res) => {
   try {

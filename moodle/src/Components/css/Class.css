@@ -1,11 +1,8 @@
 
 .topnav {
-	position: fixed;
-	top: 0px;
-	height: 60px;
-	width: 100%;
+
 	background: linear-gradient(to right, #07CED2, #197C7F);
-	z-index: 2;
+
 }
 
 .title {
@@ -72,6 +69,7 @@
   margin-top: 10px;
   margin-left: 30%;
   margin-right: 30%;
+  text-align: center;
 }
 
 #card-panel {
@@ -83,4 +81,8 @@
     height: 100%;
     position: absolute;
     margin-left: 370px;
+}
+
+#buttons{
+    margin-right: 300px;
 }
