@@ -21,7 +21,7 @@ class SignUp extends Component {
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangeUsername = this.handleChangeUsername.bind(this);
     this.handleChangeUserType = this.handleChangeUserType.bind(this);
-    // this.validation = this.validation.bind(this);
+    this.validate = this.validate.bind(this);
     this.signup = this.signup.bind(this);
   }
   handleChangeFirstName(e){
@@ -69,12 +69,20 @@ class SignUp extends Component {
     })
   }
 
+  validate(e){
+    if(this.state.password !== this.state.passwordRepeat){
+      alert("Password does not match!");
+    }else{
+      this.signup();
+    }
+  }
+
   render() {
     return (
       <div>
       	<h4 id="sign-header">SIGN UP</h4>
       	<div className="sign-fields">
-          <Input type="text" label="First Name" onChange={this.handleChangeFirstName}/>
+          <Input type="text" label="First Name" onChange={this.handleChangeFirstName} required/>
           <Input type="text" label="Last Name" onChange={this.handleChangeLastName}/>
           <Input type="text" label="Username" onChange={this.handleChangeUsername}/>
       		<Input type="password" label="Password" onChange={this.handleChangePassword} />
@@ -85,7 +93,7 @@ class SignUp extends Component {
             <option value="Student">Student</option>
           </Input>
           <br/><br/>
-          <Button waves="light" node='a' onClick={this.signup}>
+          <Button waves="light" node='a' onClick={this.validate}>
 			      SIGNUP
 			    </Button>
       	</div>

@@ -25,9 +25,17 @@ class Login extends Component {
 
     login(){
       fetch('http://localhost:3001/User/login/' + this.state.username)
-        .then((response) => { return response.json() })
+        .then((response) => {
+          if(response.status === 404){
+            alert('Not found');
+            this.props.history.push('/login');
+          }else{
+            return response.json();
+          }
+        })
         .then((body) => {
-          if(this.state.password === body.password){
+          if(body !== undefined){
+            if(this.state.password === body.password){
             this.setState({
               email : body.email,
               name : body.name,
@@ -40,11 +48,13 @@ class Login extends Component {
             }else{
               this.props.history.push('/Student/class-list', {username: this.state.username});
             }
-            
           }else{
             console.log(this.state.password);
             alert("Wrong Credentials");
             this.props.history.push('/login');
+          }
+        }else{
+            console.log('blep');
           }
       })
     }

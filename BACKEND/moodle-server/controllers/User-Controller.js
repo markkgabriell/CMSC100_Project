@@ -5,11 +5,15 @@ exports.login = (req, res) => {
 // console.log(req.params.username);
   User.findOne({username: req.params.username}, (err, user) => {
     if(err){
-      res.send(404);
+      res.send({});
     }else{
       console.log(req.params.username);
       console.log(user);
-      res.send(user);
+      if(user === null){
+        res.send(404);
+      }else{
+        res.send(user);
+      }
     }
   })
 }
