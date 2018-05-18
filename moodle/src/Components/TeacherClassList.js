@@ -53,11 +53,13 @@ class TeacherClassList extends Component {
   render() {
     return (
       <div>
+
       	<div>
           <Navbar className="topnav" right>
            <NavItem>{this.state.username}</NavItem>
             <NavItem>Logout</NavItem>
           </Navbar>
+
         </div>
         <div>
           <h3 className="title">Classes</h3>

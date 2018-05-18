@@ -33,7 +33,11 @@ router.get(('/get-all'), async(req, res) => {
 });
 
 router.get('/class-list/:username', ClassController.getById);
+
 router.post('/add', ClassController.add);
+
+router.get('/class-list-student/:username', ClassController.getByIdStudent);
+
 
 router.post(('/delete'), async(req, res) => {
   try {

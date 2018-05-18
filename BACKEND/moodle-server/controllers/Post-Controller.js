@@ -24,8 +24,19 @@ exports.delete = (req, res) => {
 }
 
 exports.getById = (req, res) => {
-
-  Post.find({class: req.params.class}, (err, post) => {
+  console.log(req.params.class);
+  Post.find({class:req.params.class}, (err, post) => {
+    if (err) {
+      console.log(err);
+      res.send(404);
+    } else {
+      res.send(post);
+    }
+  });
+}
+exports.getByTitle = (req, res) => {
+  console.log(req.params.title);
+  Post.find({title:req.params.title}, (err, post) => {
     if (err) {
       console.log(err);
       res.send(404);

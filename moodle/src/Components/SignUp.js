@@ -63,7 +63,7 @@ class SignUp extends Component {
         if(this.state.usertype == "Teacher"){
           this.props.history.push('/Teacher/class-list', {username: this.state.username});
         }else{
-          this.props.history.push('/Student/class-list');
+          this.props.history.push('/Student/class-list', {username: this.state.username});
         }
       }
     })

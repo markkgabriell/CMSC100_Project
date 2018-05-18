@@ -30,6 +30,10 @@ const UserRouter = require('./routes/User-Router');
 app.use('/User', UserRouter);
 const ClassRouter = require('./routes/Class-Router');
 app.use('/Class', ClassRouter);
+const PostRouter = require('./routes/Post-Router');
+app.use('/Post', PostRouter);
+const CommentRouter = require('./routes/Comment-Router');
+app.use('/Comment', CommentRouter);
 
 // Homepage message
 app.get('/', (req, res) => {

@@ -13,7 +13,7 @@ class StudentClassList extends Component {
   }
 
   getList(){
-    fetch('http://localhost:3001/Class/class-list/'+ this.state.username)
+    fetch('http://localhost:3001/Class/class-list-student/'+ this.state.username)
       .then((response) => {if(response.status === 404){
             alert('No Classes');
           }else{
@@ -32,8 +32,10 @@ class StudentClassList extends Component {
     return (
       <div>
       	<div className="topnav">
-        <Navbar className = "topnav" id = "helo" right>
+        <Navbar className = "topnav"right>
           <NavItem>{this.state.username}</NavItem>
+          <NavItem href='/login'>Logout</NavItem>
+
         </Navbar>
         </div>
         <div>
@@ -45,7 +47,7 @@ class StudentClassList extends Component {
           <Collection>
           {
             this.state.classes.map((Class) => {
-              return <CollectionItem key = {Class.title} username ={this.state.username} href={'/Student/Post/'+Class.title}>{Class.title}</CollectionItem>  
+              return <CollectionItem key={Class.title} username={this.state.username} href={'/Student/Post/'+Class.title}>{Class.title}</CollectionItem>  
             })
           }
           </Collection>

@@ -24,6 +24,19 @@ exports.getById = (req, res) => {
   })
 }
 
+exports.getByIdStudent = (req, res) => {
+  console.log(req.params.username);
+  Class.find({students: { $all: [req.params.username] }}, (err, Class) => {
+    if(err){
+      res.send(404);
+    }else{
+      console.log(req.params.username);
+      console.log(Class);
+      res.send(Class);
+    }
+  })
+}
+
 exports.delete = (req, res) => {
   const _id = req.body._id;
   Class.remove({ _id }, (err) => {
