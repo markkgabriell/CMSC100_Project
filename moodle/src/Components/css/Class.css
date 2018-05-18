@@ -1,11 +1,7 @@
 
 .topnav {
-	position: fixed;
-	top: 0px;
-	height: 60px;
-	width: 100%;
 	background: linear-gradient(to right, #07CED2, #197C7F);
-	z-index: 2;
+
 }
 
 .title {
@@ -64,8 +60,12 @@
   margin-top: 10px;
   margin-left: 40px;
   text-align: center;
-
-
+}
+.post-list-student  {
+  width: 20%;
+  margin-top: 10px;
+  margin-left: 500px;
+  text-align: center;
 }
 
 .class-list {

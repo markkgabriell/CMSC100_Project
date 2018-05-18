@@ -34,6 +34,7 @@ class TeacherClassList extends Component {
       	<div className="topnav">
         <Navbar className = "topnav" id = "helo" right>
           <NavItem>{this.state.username}</NavItem>
+          <NavItem href={'/login'}>Logout</NavItem>
         </Navbar>
         </div>
         <div>

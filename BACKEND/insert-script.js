@@ -26,29 +26,83 @@ db.User.insertMany([
     username: "cssotelo",
     password: "cj",
     usertype: "Teacher",
+  },
+  {
+    email: "arnado@up.edu.ph",
+    name: "Arnado",
+    username: "arnado",
+    password: "arnado",
+    usertype: "Teacher",
   }
-])
+]);
 
 db.Class.insertMany([
   {
-    title: "CMSC 124",
-    section: "U",
-    posts: "ramarabe",
+    title: "CMSC 124 U",
     teacher: "cssotelo",
     students: [],
   },
   {
     title: "CMSC 170 UV",
-    section: "UV",
-    posts: "xxx",
     teacher: "ainovejas",
     students: [],
   },
   {
     title: "CMSC 100 UV",
-    section: "V",
-    posts: "xxx",
+    teacher: "arnado",
+    students: [],
+  },
+  {
+    title: "MATH 28 UV",
     teacher: "ainovejas",
     students: [],
+  },
+  {
+    title: "ENG 10 A",
+    teacher: "cssotelo",
+    students: [],
+  },
+  {
+    title: "CMSC 19 U",
+    teacher: "cssotelo",
+    students: ["ramarabe"],
+  },
+  {
+    title: "CMSC 170 WS",
+    teacher: "ainovejas",
+    students: ["ramarabe", "mmmataya"],
   }
+])
+
+
+
+db.Post.insertMany([
+{
+  author: "cssotelo",
+  title: "Assignment 1",
+  content: "Lorem ipsum olor",
+  timestamp: "08-14-1999",
+  class: "CMSC 124 U"
+},
+{
+  author: "cssotelo",
+  title: "Assignment 2",
+  content: "Lorem ipsum olor",
+  timestamp: "08-14-2000",
+  class: "CMSC 124 U"
+},
+{
+  author: "cssotelo",
+  title: "Assignment 1",
+  content: "Lorem ipsum olor",
+  timestamp: "08-14-1999",
+  class: "ENG 10 A"
+},
+{
+  author: "arnado",
+  title: "Assignment 1",
+  content: "Lorem ipsum olor",
+  timestamp: "08-14-1999",
+  class: "CMSC 100 UV"
+}
 ])

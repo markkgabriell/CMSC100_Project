@@ -33,7 +33,7 @@ router.get(('/get-all'), async(req, res) => {
 });
 
 router.get('/class-list/:username', ClassController.getById);
-
+router.get('/class-list-student/:username', ClassController.getByIdStudent);
 router.post(('/add'), async(req, res) => {
   try {
    const data = await ClassController.add();
