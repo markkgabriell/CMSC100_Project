@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
-import {Row, Input, Button, Navbar, Collection, CollectionItem} from 'react-materialize';
+import {Row, Input, Button, Navbar, Collection, CollectionItem, NavItem} from 'react-materialize';
 import './css/Class.css';
-class ClassList extends Component {
+class TeacherClassList extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -14,12 +14,17 @@ class ClassList extends Component {
 
   getList(){
     fetch('http://localhost:3001/Class/class-list/'+ this.state.username)
-      .then((response) => { return response.json() })
-      .then((body) => {
-        console.log("body")
-        this.setState({
-          classes: body
+      .then((response) => {if(response.status === 404){
+            alert('No Classes');
+          }else{
+            return response.json();
+          }
         })
+      .then((body) => {
+        console.log(body)
+        if(body !== undefined){
+          this.setState({classes: body})
+        }
       })
   }
   
@@ -27,11 +32,15 @@ class ClassList extends Component {
     return (
       <div>
       	<div className="topnav">
+        <Navbar className = "topnav" id = "helo" right>
+          <NavItem>{this.state.username}</NavItem>
+        </Navbar>
         </div>
         <div>
           <h3 className="title">Classes</h3>
           <hr className="hr"></hr>
         </div>
+        <Button floating large className='red' waves='light' icon='add' />
         <div className="class-list">
           <Collection>
           {
@@ -46,4 +55,4 @@ class ClassList extends Component {
   }
 }
 
-export default ClassList;
+export default TeacherClassList;

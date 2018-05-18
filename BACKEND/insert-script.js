@@ -31,15 +31,22 @@ db.User.insertMany([
 
 db.Class.insertMany([
   {
-    title: "A",
-    section: "1",
+    title: "CMSC 124",
+    section: "U",
     posts: "ramarabe",
-    teacher: "ramarabe",
+    teacher: "cssotelo",
     students: [],
   },
   {
-    title: "B",
-    section: "2",
+    title: "CMSC 170 UV",
+    section: "UV",
+    posts: "xxx",
+    teacher: "ainovejas",
+    students: [],
+  },
+  {
+    title: "CMSC 100 UV",
+    section: "V",
     posts: "xxx",
     teacher: "ainovejas",
     students: [],

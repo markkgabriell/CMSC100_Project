@@ -102,6 +102,6 @@ router.post(('/delete'), async(req, res) => {
     }
 });
 
-
+router.get('/Post-list/:class', ClassController.getById);
 
 module.exports = router;

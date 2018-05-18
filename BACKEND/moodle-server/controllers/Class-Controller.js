@@ -12,6 +12,7 @@ exports.add = (req, res) => {
 }
 
 exports.getById = (req, res) => {
+  console.log(req.params.username);
   Class.find({teacher: req.params.username}, (err, Class) => {
     if(err){
       res.send(404);

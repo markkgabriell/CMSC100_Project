@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import {Row, Input, Button, Navbar, Collection, CollectionItem, NavItem} from 'react-materialize';
 import './css/Class.css';
-class TeacherClassList extends Component {
+class StudentClassList extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -45,7 +45,7 @@ class TeacherClassList extends Component {
           <Collection>
           {
             this.state.classes.map((Class) => {
-              return <CollectionItem key = {Class.title} username ={this.state.username} href={'/Teacher/Post/'+Class.title}>{Class.title}</CollectionItem>  
+              return <CollectionItem key = {Class.title} username ={this.state.username} href={'/Student/Post/'+Class.title}>{Class.title}</CollectionItem>  
             })
           }
           </Collection>
@@ -55,4 +55,4 @@ class TeacherClassList extends Component {
   }
 }
 
-export default TeacherClassList;
+export default StudentClassList;

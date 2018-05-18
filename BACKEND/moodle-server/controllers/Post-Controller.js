@@ -24,12 +24,11 @@ exports.delete = (req, res) => {
 }
 
 exports.getById = (req, res) => {
-  const _id = req.body._id;
 
-  Post.findOne({ _id }, (err, post) => {
+  Post.find({class: req.params.class}, (err, post) => {
     if (err) {
       console.log(err);
-      res.send({});
+      res.send(404);
     } else {
       res.send(post);
     }

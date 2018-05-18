@@ -6,7 +6,8 @@ const PostSchema = new Schema({
   title: { type: String, default: '' },
   content: { type: Array, default: [] },
   timestamp: { type: String, default: '' },
-  comments: { type: Array, default: [] }
+  comments: { type: Array, default: [] },
+  class: {type: String, default : ''}
 },{collection: 'Post'});
 
 mongoose.model('Post', PostSchema);
